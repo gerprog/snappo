@@ -1,0 +1,33 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid col-md-offset-1 col-md-5">
+
+ <% if current_user and current_user.admin %>
+
+ <p class="font_trebuchet_blk_20">Listing wordups</p>
+
+<table>
+  <tr>
+    <th>Textinput</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wordups.each do |wordup| %>
+  <tr>
+    <td><%= wordup.textinput %></td>
+    <td><%= link_to 'Show', wordup %></td>
+    <td><%= link_to 'Edit', edit_wordup_path(wordup) %></td>
+    <td><%= link_to 'Destroy', wordup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wordup', new_wordup_path %>
+
+<% end %>
+
+</div>
+</div>

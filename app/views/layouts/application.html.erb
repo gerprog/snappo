@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snappo!</title>
+  <%= stylesheet_link_tag    "application", media: "all" %><!-- <label id="code.slt"/> -->
+  <%= javascript_include_tag "application" %><!-- <label id="code.jlt"/> -->
+  <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
+</head>
+
+<body class="<%= controller.controller_name %>">
+
+<div id="clouds">
+  <div class="cloud x1"></div>
+  <div class="cloud x2"></div>
+  <!--<div class="cloud x3"></div>
+  <div class="cloud x4"></div>-->
+  <div class="cloud x5"></div>
+  <div class="cloud x6"></div>
+   <div class="cloud x7"></div>
+   <div class="cloud x8"></div>
+</div>
+
+<div id="Container">
+
+  <div class="container">
+
+
+
+    <div class="row-fluid emphasize-dark">
+      <div class="span12 navbar">
+
+                <div class="span2" style="padding-left:10px;">
+                      <%= image_tag("camera-icon2.png") %>
+                </div><!-- span2-->
+
+         <div class="row">
+                <div class="span8">
+                  <%= image_tag("snappo3.png") %>
+                
+      <div id="navbar">
+            <nav class="navbar-header" style="padding-left:90px;float:left;"> 
+                 <ul class="nav font_nav_bar" style="padding-top:20px;">
+                      <li><%= link_to "Home", :controller => "challenges",  :action => "index" %></li>
+                      <li><%= link_to "Take a Challenge", :controller => "challenges",  :action => "make_one" %></li>
+                      
+                <% if current_cart.line_items.empty? %>
+                    <li><%= link_to "Cart", :controller => "challenges",  :action => "make_one", notice: 'Your cart is currently empty'  %></li>
+
+                <% else %>
+                    <li><%= link_to "Cart", cart_path(current_cart) %></li>
+                <% end %>
+
+                      <li><%= link_to "Vote!", :controller => "galleries",  :action => "index" %></li>
+                      <li><%= link_to "Gallery", :controller => "lightboxes",  :action => "index" %></li>
+                      
+                      <li><%= link_to "Forum", :controller => "forums",  :action => "index" %></li>
+                     
+                  
+                  <% if logged_in? %>
+                  <li><%= link_to "My Profile", :controller => "users", :action => "welcome" %></li>
+                   <% else %>  
+                      <li><%= link_to "Sign Up", new_user_path %></li>
+                  <% end %>
+
+                    </ul>
+            </nav><!--/span12 navbar -->
+      </div> <!--navbar-->
+</div><!--span8 -->
+
+                <div class="span2" style="margin-top:10px;margin-left:-20px;">
+
+
+                  <% if logged_in? == false %>
+                        <%= form_tag sessions_path do %>
+                            <%= label_tag :email %>
+                            <%= text_field_tag :email %>
+                            <br/>
+                            <%= label_tag :password %>
+                            <%= password_field_tag :password %> <br> <br>
+                           <%= submit_tag 'Login', class: "btn btn-inverse btn-lg font_century_blk_30", style: "margin-top:-15px;font-size:15pt;padding: 4px 22px;"%>
+                        <% end %>
+
+
+
+                    <% else %>
+                        <span class="font_trebuchet_blk_15"><%= current_user.email %></span> <br><br>
+                        <%= button_to "Logout", logout_path, method: :get, class: "btn btn-inverse btn-lg font_century_blk_30", style: "font-size:16pt;padding: 10px 22px;"  %>
+                    <% end %>
+
+                 
+                       <% if current_user and current_user.admin %>
+                        <%= form_tag challengers_path, :method => 'get', :id => "challengers_search" do %>
+                            <%= text_field_tag :search_query,
+                                 params[:search_query] %>
+                            <%= submit_tag "Search Challenges", :name => nil, class: "btn btn-success btn-sm", style: "margin-top:0px;"  %>
+                           
+                        <% end %>
+                         <% end %>
+
+                </div><!--span2-->
+
+        </div><!--row -->
+
+ </div><!--span12 navbar -->
+</div><!-- row-fluid emphasize-dark-->
+      
+</div><!--/container -->
+
+        <div id="main">
+          <%= yield %><!-- <label id="code.depot.e.include"/> -->
+        </div><!-- main-->
+
+
+</div> <!-- Container-->
+
+
+   <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'camerachallenge'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+    
+    <div id="copyright" style="margin-top:10px;">&copy; Snappo! - Gerard Daly 2013
+     <%= link_to "About", :controller => "challenges",  :action => "copyright" %></span>
+      
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<h1>Listing Challengers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Caption</th>
+    <th>Colour</th>
+    <th>Location</th>
+    <th>Theme</th>
+    <th>Timescale</th>
+  </tr>
+
+<% @challengers.each do |challenger| %>
+  <tr>
+    <td><%= challenger.title %></td>
+    <td><%= strip_tags(challenger.caption) %></td>
+    <td><%= challenger.colour %></td>
+    <td><%= challenger.location %></td>
+    <td><%= challenger.theme %></td>
+    <td><%= challenger.timescale %></td>
+  
+    <td><%= link_to 'Show', challenger %></td>
+    <td><%= link_to 'Edit', edit_challenger_path(challenger) %></td>
+    <td><%= link_to 'Destroy', challenger, method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+

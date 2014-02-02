@@ -1,0 +1,19 @@
+<div class="container container_grey curved_border emphasize-dark">
+<div class="row-fluid">
+ <% if current_user and current_user.admin %>
+<div class="row-fluid" style="margin-left:50px;">
+<span class="font_trebuchet_blk_25">Listing Challenges</span>
+
+
+ <div id="cresults_div"><%= render 'cresults' %></div>
+
+
+
+<br />
+
+<%= link_to 'New challenger', new_challenger_path %>
+<% end %>
+</div>
+
+</div>
+</div>

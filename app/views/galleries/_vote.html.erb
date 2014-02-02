@@ -1,0 +1,61 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <b>User:</b>
+  <%= @gallery.user_id %>
+</p>
+<p>
+  <b>Photo by:</b>
+  <%= @gallery.user_name %>
+</p>
+<p>
+  <b>Uploaded Photo:</b><br>
+    <%= image_tag@gallery.avatar_url %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @gallery.title %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%= @gallery.caption %>
+</p>
+
+<p>
+  <b>Recreate this pic:</b><br>
+   <%= image_tag(@gallery.homage_url) %>
+</p>
+
+<p>
+  <b>Colour:</b>
+  <%= @gallery.colour %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @gallery.location %>
+</p>
+
+<p>
+  <b>Theme:</b>
+  <%= @gallery.theme %>
+</p>
+
+<p>
+  <b>Timescale:</b>
+  <%= @gallery.timescale %>
+</p>
+
+<!-- ah now can't have the admin casting votes! -->
+<!--<%= link_to('up vote!', vote_for_gallery_path(@gallery), :method => :post) %>-->
+<%= "Total votes = #{@gallery.votes_for}" %> |
+<!--<%= link_to('down vote!', vote_against_gallery_path(@gallery), :method => :post) %>-->
+<%= "Total votes Against = #{@gallery.votes_against}" %> |
+
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>

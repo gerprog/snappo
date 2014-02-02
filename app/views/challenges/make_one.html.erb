@@ -1,0 +1,81 @@
+<div class="container container_grey curved_border emphasize-dark" style="margin-top:0px;">
+
+<% if logged_in? == false %>
+<div class="row-fluid" style="padding-top:0px;">
+        <div class="span7 text-center">
+          <p class="font_trebuchet_blk_30">First time here?</p> 
+           <p class="font_trebuchet_blk_30"> You need to</p>
+         <p style="margin-top:90px;"><%= button_to "Sign Up!", new_user_path, class: [:btn, :'btn-lg', :'btn-success', :'font_century_blk_30'],  style: "font-size:30pt;padding: 18px 28px;" %></p>
+          </div><!--span6--> 
+          <div class="span5 ">
+          <p class="font_trebuchet_blk_30 ">Been here before?</p>
+          
+        
+
+              <%= form_tag sessions_path do %>
+                <div class="field">
+                  <%= label_tag :email %>
+                  <%= text_field_tag :email %>
+                </div>
+
+                <div class="field">
+                <%= label_tag :password %>
+                <%= password_field_tag :password %>
+                </div>
+                <p class="">
+                <%= submit_tag 'Login',class: "btn btn-inverse btn-lg font_century_blk_30", style: "font-size:20pt;padding: 16px 28px;"  %>
+          </p>
+              <% end %>   
+          </div><!--span6--> 
+       </div>
+       <% end %>     
+  <div class="row-fluid" style="margin-top:-10px;">
+      <div class="span7">
+
+        <% @challengers.each do |challenger| %>
+        <div class="span12 curved_border dark_grey_box_padding emphasize-dark" style="padding-left:70px;padding-right:70px;">
+              <div class="span 10 text-center curved_border challenge">
+                <span class="font_trebuchet_blk_20">Title: </span>
+                <span class="font_trebuchet_grey_20"><%= challenger.title %></span><br><br>
+                <span class="font_trebuchet_blk_20">Recreate this pic:</span><br><br><%= image_tag(challenger.homage_url) %><br><br>
+                  <span class="font_trebuchet_blk_20">Caption: </span><br>
+                    <span class="font_trebuchet_grey_20"><%= sanitize(challenger.caption) %></span><br><br>
+                   <span class="font_trebuchet_blk_20">Colour: </span>
+                    <span class="font_trebuchet_grey_20"><%= challenger.colour %></span><br><br>
+                   <span class="font_trebuchet_blk_20">Location: </span>
+                    <span class="font_trebuchet_grey_20"><%= challenger.location %></span><br><br>
+                    <span class="font_trebuchet_blk_20">Theme: </span>
+                     <span class="font_trebuchet_grey_20"> <%= challenger.theme %></span><br><br>
+                    <span class="font_trebuchet_blk_20">Timescale: </span>
+                      <span class="font_trebuchet_grey_20"><%= challenger.timescale %></span>
+              </div><!--makeone_list col-md-8--> 
+
+        </div><!--makeone row span12--> 
+              <% end %>
+      </div><!--row span5--> 
+     
+
+      <div class="span5 curved_border dark_grey_box_padding emphasize-dark text-center top-padding-80">
+        <p class="font_trebuchet_blk_20" style="margin-top:-40px;">If you like this Snappo! <br>challenge you can </p><br><br>
+            <% @challengers.each do |challenger| %>
+
+
+              <%= button_to 'Take It!', line_items_path(:challenger_id => challenger), class: "btn btn-success btn-lg font_century_blk_30", style: "font-size:30pt;margin-top:-20px;margin-bottom:20px;padding: 18px 28px;", :method => :post%>
+
+   <% end %>
+                  <hr class="style-two">
+                 <p class="font_trebuchet_blk_20">Try use some of it when<br>taking a photo</p>
+
+                  <p class="font_trebuchet_blk_20">Perhaps you can use it all!</p>
+                  <hr class="style-two">
+                 <p class="font_trebuchet_blk_20">Or you can</p><br>
+                <p><%= button_to("Try Again!", challenges_make_one_path, class: "btn btn-warning btn-lg font_century_blk_30", style: "font-size:30pt;padding: 18px 28px;margin-top:-20px;") %></p>
+                 <p class="font_trebuchet_blk_20">They'll always be different!</p>
+               
+      </div>
+   
+
+
+</div><!--row-fluid-->    
+</div><!--container container_yellow-->
+

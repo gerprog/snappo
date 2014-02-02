@@ -1,0 +1,9 @@
+ <% if current_user and current_user.admin %>
+
+ <p class="font_trebuchet_blk_20">New forum</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', forums_path %>
+
+<% end %>

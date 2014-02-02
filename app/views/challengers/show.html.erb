@@ -1,0 +1,47 @@
+<div class="container container_grey curved_border emphasize-dark">
+<div class="row-fluid col-md-offset-1 col-md-11">
+
+  <!--<p id="notice"><%= notice %></p>-->
+
+<p>
+  <b>Title:</b>
+  <%= @challenger.title %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%= @challenger.caption %>
+</p>
+
+<p>
+  <b>Homage:</b>
+</p>
+<p>
+  <%= image_tag(@challenger.homage_url) %>
+</p>
+
+<p>
+  <b>Colour:</b>
+  <%= @challenger.colour %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @challenger.location %>
+</p>
+
+<p>
+  <b>Theme:</b>
+  <%= @challenger.theme %>
+</p>
+
+<p>
+  <b>Timescale:</b>
+  <%= @challenger.timescale %>
+</p>
+
+
+<%= link_to 'Edit', edit_challenger_path(@challenger) %> |
+<%= link_to 'Back', challengers_path %>
+</div>
+</div>

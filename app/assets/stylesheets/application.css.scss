@@ -1,0 +1,619 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will
+ * include all the files listed below.
+ * 
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets,
+ * vendor/assets/stylesheets, or vendor/assets/stylesheets of plugins, if any,
+ * can be referenced here using a relative path.
+ * 
+ * You're free to add application-wide styles to this file and they'll appear
+ * at the top of the compiled file, but it's generally better to create a new
+ * file per style scope.
+ * 
+ *= require_self
+ *= require_tree .
+ */
+/*
+ *= require bootstrap_and_overrides
+ */
+
+#banner {
+  background: #9c9;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+
+  img {
+    float: left;
+  }
+}
+
+
+#notice {
+  color: #000 !important;
+  border: 2px solid red;
+  border-radius:10px 10px 10px 10px;
+  padding-top:3px;
+  position: absolute;
+  z-index:30;
+  height: 35px;
+  margin-top: 0px;
+  background-color: #FF9933;
+  font-family: "Trebuchet MS", Arial, Verdana;
+  font-size: 12pt;
+  color: #999999;
+  text-align:center;
+}
+
+
+.position_absolute { 
+  position: absolute;
+  z-index:25;
+}
+
+
+#columns {
+  background: #141;
+
+  #main {
+    background: white;
+  }
+
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #999999;
+
+
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:     white;
+
+      table {
+        border-top:    0px dotted #595;
+        border-bottom: 0px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+
+.depot_form {
+  fieldset {
+    background: #efe;
+    legend {
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+    br {
+      display: none
+    }
+  }
+}
+
+.center { float: none; margin-left: auto; margin-right: auto; }
+
+#main_wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  border-top: 4px solid #9d9d9d;
+  border-bottom: 6px solid #535353;
+  border-left: 6px solid gray;
+  border-right: 6px solid gray;
+}
+
+.font_museo_header {
+  font-family: "MuseoSlab-500", sans-serif;
+font-size: 60pt;
+color: #999999;
+}
+
+.font_nav_bar{
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 13pt;
+color: #999999;
+}
+
+.nav_bar {
+  padding-left: 0px;
+  width: 764px;
+  height: 50px;
+  float: left;
+}
+.left {
+    float: left;
+}
+
+.font_trebuchet_270 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 270pt;
+color: #D0D0D0;
+}
+
+.font_trebuchet_70 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 70pt;
+line-height: 100pt;
+color: #000;
+}
+
+.font_trebuchet_colour_70 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 70pt;
+line-height: 100pt;
+color: #EE1289;
+}
+
+.font_trebuchet_20 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 20pt;
+color: #A0A0A0;
+line-height: 20pt;
+}
+
+.font_trebuchet_blk_30 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 30pt;
+color: #282828;
+line-height: 25pt;
+}
+
+.font_trebuchet_blk_25 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 25pt;
+color: #282828;
+line-height: 25pt;
+}
+
+.font_trebuchet_colour_25 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 25pt;
+color: #1C86EE;
+line-height: 25pt;
+}
+
+.font_trebuchet_colour_30 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 30pt;
+color: #1C86EE;
+line-height: 25pt;
+}
+
+.font_trebuchet_colour2_25 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 25pt;
+color: #FF1493;
+line-height: 25pt;
+}
+
+.font_trebuchet_colour2_30 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 30pt;
+color: #FF1493;
+line-height: 25pt;
+}
+
+.font_trebuchet_white_30 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 30pt;
+color: #fff;
+line-height: 20pt;
+}
+
+.font_trebuchet_blk_20 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 20pt;
+color: #282828;
+line-height: 25pt;
+}
+
+.font_trebuchet_blue_20 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 20pt;
+color: #0066FF;
+line-height: 20pt;
+}
+
+.font_trebuchet_blk_10 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 10pt;
+color: #282828;
+line-height: 10pt;
+}
+
+.font_trebuchet_blk_15 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 15pt;
+color: #282828;
+line-height: 20pt;
+}
+
+.font_trebuchet_white_15 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 15pt;
+color: #fff;
+line-height: 20pt;
+}
+
+.font_trebuchet_white_20 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 20pt;
+color: #F8F8F8;
+line-height: 20pt;
+}
+
+.font_trebuchet_grey_20 {
+ font-family: "Trebuchet MS", Arial, Verdana;
+font-size: 20pt;
+color: #909090;
+line-height: 20pt;
+}
+
+
+
+.font_century_blk_30 {
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+font-size: 30pt;
+color: #282828;
+line-height: 25pt;
+}
+
+
+
+.forum_font {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 15pt;
+  line-height: 160%;
+  color: #707070;
+}
+
+.forum_font_bold {
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 15pt;
+  line-height: 160%;
+  color: #333a93;
+  font-weight:bold;
+}
+
+.thumbnail_green{
+  background-color: #99FF66;
+    height:400px;
+    margin-left:10px;
+    margin-right:10px;
+    position: relative;
+}
+
+.thumbnail_dark{
+  background-color: #E8E8E8;
+    height:400px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:20px;
+    position: relative;
+    float: left;
+}
+
+.challenge_btn{
+    height:400px;
+}
+
+.curved_border{
+  border:0px solid; 
+  border-radius:10px 10px 10px 10px;
+}
+
+.grey_box {
+  background-color: #C0C0C0;
+  height: 650px;
+}
+
+.grey_box_padding {
+  background-color: #C0C0C0;
+  height: 650px;
+    padding: 0px 20px 20px 20px;
+}
+
+.yellow_box_padding {
+  background-color: #FFFFCC;
+  height: 650px;
+    padding: 20px 20px 20px 20px;
+}
+
+.dark_grey_box_padding {
+  background-color: #F0F0F0;
+  height: 650px;
+    padding: 20px 20px 20px 20px;
+}
+
+.makeone_list_img {
+  background-color: #66FF33;
+   overflow: auto;
+    margin-top: 1em;
+}
+
+.container_yellow{
+  background-color: #FFFF00;
+  padding: 20px;
+}
+
+.margin_top {
+  margin-top: 50px;
+  }
+
+.container_grey{
+  background-color: #E8E8E8;
+  padding:40px;
+}
+
+.details {
+  height:390px;
+  padding-top:10px;
+    margin-left:0px;
+  margin-right:0px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border:0px solid; 
+  border-radius:7px 7px 7px 7px;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+  display:none;
+}
+
+
+.details_container {
+  height:400px;
+    margin-left:30px;
+  margin-right:30px;
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  z-index: 20;
+  border:0px solid; 
+  border-radius:7px 7px 7px 7px;
+}
+
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 27px; 
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+
+.jumbotron_text { 
+  position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  z-index: 20;
+}
+
+#challenges_4 {
+  position: relative;
+  z-index: 20;
+}
+
+#challenges_numbers {
+  position:absolute;
+  z-index:1;
+}
+
+
+#delete_buttons {
+  position:absolute;
+  z-index:20;
+}
+
+
+.vote_box {
+  background-color:#CCFF66;
+}
+
+.btn-text-white {
+  color:#00ff00;
+}
+
+.margin-from-top-minus30 {
+  margin-top:-30px;
+  }
+
+.top-buffer-30 { 
+margin-top:30px; 
+}
+
+.top-padding-80 { 
+padding-top:80px; 
+}
+
+
+div[class*="emphasize-"] {
+    background: #E8E8E8;
+}
+ 
+.emphasize-dark {
+    box-shadow: 0 0 12px 9px rgba(0,0,0,.35)
+}
+ 
+.emphasize-light {
+    box-shadow: 0 0 0 10px rgba(255,255,255,.25)
+}
+ 
+.emphasize-inset {
+    box-shadow: inset 0 0 7px 4px rgba(255,255,255,.5)
+}
+ 
+.emphasize-border {
+    box-shadow: inset 0 0 0 7px rgba(255,255,255,.5)
+}
+
+
+.cart{
+  width:250px;
+  height:400px;
+  margin-left:15px;
+  background-color: #F8F8F8;
+  padding-top:20px;
+  padding-left:20px;
+  padding-right:20px;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.35)
+}
+
+.challenge{
+  width:100%;
+  height:100%;
+  background-color: #F8F8F8;
+  padding-top:20px;
+  padding-left:20px;
+  padding-right:20px;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.35)
+}
+
+.cart_small{
+  width:100%;
+  height:100%;
+  margin-left:0px;
+  background-color: #F8F8F8;
+  padding-top:10px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-bottom:10px;
+  float: left;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+}
+
+
+.thumbsup_btn{
+  background-image: url(thumbs_up.png);
+  width:111px;
+  height:27px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+
+
+hr.style-two { border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); }
+
+hr.style-four { height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5); }
+
+#forum_top {
+  width: 745px;
+  height: 50px;
+  float:left;
+  margin-left: 20px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  }
+
+#copyright {
+  margin-left: auto;
+  margin-right: auto;
+  height: 25px;
+  text-align: center;
+  font-family: "Trebuchet MS", Arial, Verdana;
+  font-size: 10pt;
+  color: #000;
+}
+
+#missing {
+  padding:20px;
+  height: 280px;
+  width: 190px;
+  margin-top:180px;
+  margin-left:145px;
+  background-color: #C0C0C0;
+   position:absolute;
+  z-index:10;
+}
+
+.challenge_example {
+   background-image: url(challenge_example3.png);
+    height: 637px;
+  width: 550px;
+}
+.step1{
+   background-image: url(step1.png);
+    height: 250px;
+  width: 200px;
+}
+
+.step2{
+   background-image: url(step2.png);
+    height: 250px;
+  width: 200px;
+}
+
+.step3{
+   background-image: url(step3.png);
+    height: 250px;
+  width: 200px;
+}
+
+.order_details{
+     background-color: #fff;
+    height: 100%;
+  width: 100%;
+}
+
+.thanks1{
+   background-image: url(gallery1.png);
+    height: 250px;
+  width: 200px;
+}
+
+.thanks2{
+   background-image: url(forum2.png);
+    height: 250px;
+  width: 200px;
+}
+
+.thanks3{
+   background-image: url(vote1.png);
+    height: 250px;
+  width: 200px;
+}
+
+input[type=text], input[type=password] {
+    height: 28px !important;
+}

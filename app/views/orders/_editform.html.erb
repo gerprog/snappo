@@ -1,0 +1,25 @@
+<%= form_for(@order, :html => {:multipart => true}) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %>
+      prohibited this order from being saved:</h2>
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <p class="font_trebuchet_blk_30">If you have your photo ready </p>
+ <p class="font_trebuchet_blk_30">please upload it here! </p>
+<div class="field" style="margin-top:40px;">
+    <!--<%= f.label :avatar %><br />-->
+    <%= f.file_field :avatar %>
+  </div><br>
+
+  <div class="actions">
+    <%= f.submit 'Upload!', class: "btn btn-inverse btn-lg font_century_blk_30" %>
+  </div>
+<% end %>

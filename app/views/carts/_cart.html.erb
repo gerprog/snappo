@@ -1,0 +1,14 @@
+<!--<h3>Your Challenge</h3>-->
+
+<div class="cart text-center">
+  <%= render(cart.line_items) %>
+</div>
+
+<hr class="style-two ">
+
+<span class="col-md-6"><%= button_to "Checkout", new_order_path, class: "btn btn-success btn-lg", method: :get %></span>
+
+<span class="col-md-6"><%= button_to 'Empty Challenge', cart, class: "btn btn-success btn-lg", method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+<p class="font_trebuchet_blk_15 text-center">To take a Challenge you need to be logged in!</p>
+<p class="font_trebuchet_blk_15 text-center">If you empty a Challenge it is gone!</p>

@@ -1,0 +1,13 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid" style="margin-left:100px">
+
+	<!--<h1>Editing Challenge</h1>-->
+
+<%= render 'editform' %>
+
+<%= link_to 'Back to Challenge', @order %> 
+<% if current_user and current_user.admin %>
+<%= link_to 'Back', orders_path %>
+<% end %>
+</div>
+</div>

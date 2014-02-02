@@ -1,0 +1,25 @@
+<div class="container container_grey curved_border emphasize-dark">
+<div class="row-fluid col-md-offset-1 col-md-11">
+
+ <% if current_user and current_user.admin %>
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Challenger:</b>
+  <%= @line_item.challenger_id %>
+</p>
+
+<p>
+  <b>Cart:</b>
+  <%= @line_item.cart_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_line_item_path(@line_item) %> |
+<%= link_to 'Back', line_items_path %>
+
+<% end %>
+
+</div>
+</div>
+

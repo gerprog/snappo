@@ -1,0 +1,55 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid">
+  
+	 <div class="span7 text-center">
+	    <p class="font_trebuchet_blk_30">Welcome to Snappo!</p>
+	    <p class="font_trebuchet_blk_20" style="margin-top:50px;">Now please Login!</p>
+	    <p class="font_trebuchet_blk_20">Just enter the email and password</p>
+	    <p class="font_trebuchet_blk_20">you used when signing up.</p>     
+	  </div>
+
+ <div class="span4" style="margin-top:0px;margin-left:100px">
+  	<div>
+   <p class="font_trebuchet_blk_30">Login</p>
+		<%= form_tag sessions_path do %>
+			<div class="field">
+				<%= label_tag :email %>
+				<%= text_field_tag :email %>
+			</div>
+
+			<div class="field">
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+			</div>
+			
+			<div class="actions">
+			<%= submit_tag 'Login',class: "btn btn-inverse btn-lg font_century_blk_30", style: "font-size:20pt;padding: 16px 28px;" %>
+			</div>
+		<% end %>
+	</div>
+	</div>
+
+<div class="row-fluid">
+    <div class="span12" style="margin-top:0px;">
+      <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Take a Challenge 
+      <hr class="style-two"> 
+    <div class="step1" style="margin-left:70px;"></div>
+    <div class="col-md-12 text-center font_trebuchet_blk_15"> Signup is easy!<br>Login &amp; take a challenge<br>Try some or even all of its tasks</div>
+    <hr class="style-two">
+    </div>
+    <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Upload a Photo!
+      <hr class="style-two">
+    <div class="step2" style="margin-left:70px;"></div>
+    <div class="col-md-12 text-center font_trebuchet_blk_15">When you're ready<br>Login to your profile <br>to upload your photo</div>
+    <hr class="style-two">
+    </div>
+     <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Vote on others!
+      <hr class="style-two">
+     <div class="step3" style="margin-left:70px;"></div>
+      <div class="col-md-12 text-center font_trebuchet_blk_15">Checkout out the Gallery<br>Vote on other photos<br> &amp; Join the Forum</div>
+      <hr class="style-two">
+   </div>
+</div><!--row--> 
+
+  </div>
+</div>

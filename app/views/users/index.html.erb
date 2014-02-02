@@ -1,0 +1,29 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid" style="margin-left:50px;">
+ <% if current_user and current_user.admin %>
+	<p class="font_trebuchet_blk_25">Listing Users</p>
+	<table>
+		<tr>
+			<th>Email</th>
+			<th>Admin</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	<% @users.each do |user| %>
+		<tr>
+			<td><%= user.email %></td>
+			<td><%= user.admin %></td>
+			<td><%= link_to 'Show', user %></td>
+			<td><%= link_to 'Edit', edit_user_path(user)%></td>
+			<td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
+		</tr>
+	<% end %>
+	</table>
+<br />
+<%= link_to 'New User', new_user_path %>
+
+<p><%= will_paginate @users %></p>
+<% end %>
+</div>
+</div>

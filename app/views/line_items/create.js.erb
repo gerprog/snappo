@@ -1,0 +1,11 @@
+$("#notice").hide();
+//#START_HIGHLIGHT
+
+//had to change length == 1 to 0 here so that the first one would display
+if ($('#cart tr').length == 0) { $('#cart').show('blind', 700); }
+
+//#END_HIGHLIGHT
+$('#cart').html("<%=j render @cart %>");
+
+$('#current_item').css({'background-color':'#88ff88'}).
+  animate({'background-color':'#F8F8F8'}, 2000);

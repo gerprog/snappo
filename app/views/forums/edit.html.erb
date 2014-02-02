@@ -1,0 +1,10 @@
+<% if current_user and current_user.admin %>
+
+	<p class="font_trebuchet_blk_20">Editing forum</p>
+
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @forum %> |
+	<%= link_to 'Back', forums_path %>
+
+<% end %>

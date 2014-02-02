@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  caption: MyString
+  homage_url: MyString
+  colour: MyString
+  location: MyString
+  theme: MyString
+  timescale: MyString
+
+two:
+  title: MyString
+  caption: MyString
+  homage_url: MyString
+  colour: MyString
+  location: MyString
+  theme: MyString
+  timescale: MyString

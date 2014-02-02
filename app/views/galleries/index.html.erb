@@ -1,0 +1,98 @@
+<div class="container container_grey curved_border emphasize-dark" style="margin-top:0px;">
+ <div class="row-fluid margin-from-top-minus30">
+ 
+
+ <div class="container" style="padding-left:20px;">  
+    <div class="row-fluid">
+        <span class="span12 text-center font_trebuchet_blk_30" style="margin-top:30px;">Vote for each Photo!</span>
+    </div>
+    <div class="row-fluid">
+        <span class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Hover for the <br>Snappo! challenges</span>
+        <span class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">A good attempt<br> at the tasks?</span>
+        <span class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Yay or Nay?</span>
+    </div>
+
+</div>
+
+
+<div class="container" style="margin-left:20px;"> 
+
+
+    <div class="row">
+      <% if notice %>
+        <p id="notice" class="offset3 span3"><%= notice %></p>
+      <% end %>
+    </div>
+
+
+<div class="row" style="margin-left:30px;"> 
+  <% @galleries.each do |gallery| %>
+
+          <div class="span4 text-center thumbnail_dark top-buffer-30" style="margin-left:0px;">              
+                <div class="text-center">
+
+                <!--<td><%= gallery.user_id %></td>-->
+               <%= image_tag gallery.avatar_url, class:"img-rounded" %>
+
+                 <div class="details_container">
+                  <div id="" class="details">
+                    <span>Photo by: <%= gallery.user_name %></span><br> 
+                    <span>Title: <%= gallery.title %></span><br>
+                    <span>Caption: <%= gallery.caption %></span><br>
+                    <span>Recreate this pic:<br>   <%= image_tag(gallery.homage_url) %></span><br>
+                    <span>Colour: <%= gallery.colour %></span><br>
+                    <span>Location: <%= gallery.location %></span><br>
+                    <span>Theme: <%= gallery.theme %></span><br>
+                    <span>Timescale: <%= gallery.timescale %></span><br>
+
+                    <% if current_user and current_user.admin %>
+                        <span><%= link_to 'Show', gallery %></span>
+                        <span><%= link_to 'Edit', edit_gallery_path(gallery) %></span>
+                        <span><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></span><br>
+                    <% end %>
+
+                    <% if current_user %>
+                    <%= link_to('YAY!', vote_for_gallery_path(gallery), :class => "btn btn-success btn-sm", :method => :get) %>
+                        <%= " #{gallery.votes_for}" %> 
+                        <!--<%= link_to('down vote!', vote_against_gallery_path(gallery), :method => :post) %>-->
+                    <%= link_to('NAY!', vote_against_gallery_path(gallery), :class => "btn btn-danger btn-sm", :method => :get) %>
+                        <%= " #{gallery.votes_against}" %>
+
+                       <% else %>  
+                          <%= button_to "Login to Vote", login_path, class: "btn btn-inverse btn-sm" %>  
+                       <% end %>
+
+                  </div><!--details--> 
+                </div><!--details_container --> 
+
+                </div><!--text-center--> 
+          </div><!--span4--> 
+
+                <% end %>
+
+  </div><!--row--> 
+
+                <% if current_user and current_user.admin %>
+                    <div class="text-center">
+                        <h4><%= link_to 'New Gallery', new_gallery_path %></h4>
+                    </div>
+                <% end %>
+  </div><!--container--> 
+
+
+</div><!--row-fluid--> 
+</div><!--container--> 
+
+<script>
+$(".details_container").hover(
+  function() { $(this).children(".details").fadeIn(500) },
+  function() { $(this).children(".details").fadeOut(500); }
+);
+
+$(function() {
+   $('#notice').delay(500).fadeIn('normal', function() {
+      $(this).delay(2000).fadeOut();
+   });
+});
+</script>
+

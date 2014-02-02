@@ -1,0 +1,33 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid col-md-offset-1 col-md-11">
+
+<p class="font_trebuchet_blk_30">Bit of the Grumpy today? Snappo! is here to help : )</p><br>
+<p class="font_trebuchet_blk_20">Vent it all out here bad as you can .. much as you like!</p>
+</div>
+
+	<div class="row-fluid" >
+		<div class="col-md-offset-1 col-md-4" style="padding-top:20px;">
+			<%= form_tag "/validate" do %>
+		<span><%= text_area_tag :search_string %></span>
+		</div>
+		<div class="col-md-7" style="padding-top:20px;">
+		 <%= submit_tag "Make all Good!",class: "btn btn-success btn-lg", style: "font-size:20pt;"  %>
+		</div>
+	</div>
+
+<div class="row-fluid col-md-offset-1 col-md-11">
+		<p class="font_trebuchet_blk_25">You say this..</p><br>
+		<p class="font_trebuchet_colour_25"><%= @input1 %> </p>
+		<br>
+		<hr class="style-two">
+		<p class="font_trebuchet_blk_25">but what you really meant is...</p> 
+		<p class="font_trebuchet_colour2_25"><%= @result %></p>
+		<br>
+		<p class="font_trebuchet_70 text-center">Feel better now?</p>
+</div>
+
+
+<% end %>
+
+</div>
+</div>

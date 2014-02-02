@@ -1,0 +1,19 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid col-md-offset-1 col-md-5">
+
+  <% if current_user and current_user.admin %>
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Textinput:</b>
+  <%= @wordup.textinput %>
+</p>
+
+
+<%= link_to 'Edit', edit_wordup_path(@wordup) %> |
+<%= link_to 'Back', wordups_path %>
+
+  <% end %>
+
+</div>
+</div>

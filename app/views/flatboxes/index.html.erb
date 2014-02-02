@@ -1,0 +1,78 @@
+<div class="container container_grey curved_border emphasize-dark">
+<div class="row-fluid col-md-offset-3 col-md-5">
+  <hr class="style-two">
+
+    <div id="lightbox" style="margin-top:50px;">
+
+         <img src="" id="mainImage" class="text-center" alt="" />
+
+     <!-- removing the buttons due to ajax issue -->
+           <a href="#" id="prev">Prev</a>
+            <a href="#" id="next">Next</a>
+      
+
+    </div><!--lightbox--> 
+
+<div class="row"  style="margin-top:50px;">
+<p class="font_trebuchet_blk_30 text-center" style="margin-top:30px;">See Gallery 1 too! </p>
+</div>
+
+</div>
+</div>
+
+
+
+<script>
+        var myImage = document.getElementById("mainImage");
+        var imageArray = [
+          "/system/avatars/original/IMG_3983.jpg?1386604661",
+          "/system/avatars/original/100_3309.jpg?1386606017",
+          "/system/avatars/original/IMG_1005.jpg?1386605650",
+          "/system/avatars/original/IMG_2535.jpg?1386604866",
+          "/system/avatars/original/IMG_2300.jpg?1386606227",
+          "/system/avatars/original/IMG_3470.jpg?1386605730",
+          "/system/avatars/original/IMG_8055.jpg?1386606610",
+          "/system/avatars/original/IMG_1237.jpg?1386605786",
+          "/system/avatars/original/IMG_1126.jpg?1386605441",
+          "/system/avatars/original/IMG_8185.jpg?1386606589",
+          "/system/avatars/original/IMG_0912.jpg?1386605982"
+        ];
+        var imageIndex = 0;
+
+        function changeImage() {
+          myImage.setAttribute("src",imageArray[imageIndex]);
+          imageIndex++;
+          if (imageIndex >= imageArray.length) {
+            imageIndex = 0;
+          }
+        }
+
+        var prevImage = function() { 
+          imageIndex -= 1; 
+          displayImage()
+          e.preventDefault();
+        }
+        var nextImage = function() { 
+          imageIndex += 1; 
+          displayImage()
+          e.preventDefault();
+        }
+
+        var displayImage = function() {
+          //$("img"[1]).attr("src", imageArray[imageIndex]);
+          //myImage.setAttribute("src",imageArray[imageIndex]);
+          $('#lightbox').children("img").attr("src", imageArray[imageIndex]);
+        }
+        displayImage()
+
+        var intervalHandle = setInterval(changeImage,2000);
+        // clicking the timed images stops the slideshow
+        myImage.onclick =  function() {
+          clearInterval(intervalHandle);
+        };
+
+        $("#prev").on("click", prevImage);
+        $("#next").on("click", nextImage);
+</script>
+
+

@@ -1,0 +1,15 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid col-md-offset-1 col-md-5">
+
+ <% if current_user and current_user.admin %>
+
+	<p class="font_trebuchet_blk_20">New wordup</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', wordups_path %>
+
+<% end %>
+
+</div>
+</div>

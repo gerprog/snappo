@@ -1,0 +1,51 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid">
+
+
+
+<% if logged_in? == false %>
+
+      <div class="span5 text-center" style="margin-left:100px">
+       <p class="font_trebuchet_blk_30">Hi!</p>
+       <p class="font_trebuchet_blk_15" style="margin-top:50px;">
+          You must be logged in to take a <br>Snappo! challenge. </p>
+        <p class="font_trebuchet_blk_15"> Just enter the email and password you <br>used when signing up.</p>
+          <hr class="style-two">
+          <p class="font_trebuchet_blk_15" style="margin-top:10px;">If you don't have an account<br>Please
+		</p>
+		<%= button_to "Sign Up", new_user_path, class: "btn btn-success btn-lg font_century_blk_30", style: "font-size:20pt;padding: 16px 28px;"%> 
+        <p class="font_trebuchet_blk_30">Thanks!</p>
+        
+      </div>
+     <% end %>
+
+<% else %>
+  <div class="span5" style="margin-left:100px">
+  <% if logged_in? %>
+    <p class="font_trebuchet_blk_30">Almost done! </p>
+    <p class="font_trebuchet_blk_25" style="margin-top:50px;">Snappo! will show your name</p>
+    <p class="font_trebuchet_blk_25">with your photo in the </p>
+      <p class="font_trebuchet_blk_25"> Gallery when you upload it</p>
+    <p class="font_trebuchet_blk_25" style="margin-top:50px;">Please enter your name here </p> 
+
+
+    <%= render 'form' %>
+
+   <% else %>
+    <p class="font_trebuchet_blk_30">Login</p>
+        <%= form_tag sessions_path do %>
+              <%= label_tag :email %>
+              <%= text_field_tag :email %>
+           <br/>
+              <%= label_tag :password %>
+              <%= password_field_tag :password %>
+            <%= button_to "Login", login_path, class: "btn btn-inverse btn-lg font_century_blk_30", style: "font-size:20pt;padding: 16px 28px;" %>  
+        <% end %>
+<% end %>
+     
+  </div>
+
+
+
+</div>
+</div>

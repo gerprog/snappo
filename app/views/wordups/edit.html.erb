@@ -1,0 +1,16 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid col-md-offset-1 col-md-5">
+
+ <% if current_user and current_user.admin %>
+
+	<h1>Editing wordup</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @wordup %> |
+<%= link_to 'Back', wordups_path %>
+
+<% end %>
+
+</div>
+</div>

@@ -1,0 +1,35 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+<table style="margin-top:40px;">
+<% @challengers.each do |challenger| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+    <td>
+      Recreate: <%= image_tag(challenger.homage_url) %>
+    </td>
+
+    <td class="list_description">
+      <dl>
+        <dt>Title: <%= challenger.title %></dt>
+        <dt>Caption: <%= strip_tags(challenger.caption) %></dt>
+        <dt>Colour: <%= challenger.colour %></dt>
+        <dt>Location: <%= challenger.location %></dt>
+        <dt>Theme: <%= challenger.theme %></dt>
+        <dt>Timescale: <%= challenger.timescale %></dt>
+
+      </dl>
+    </td>
+
+    <td class="list_actions">
+      <%= link_to 'Show', challenger %><br/>
+      <% if current_user and current_user.admin %>
+      <%= link_to 'Edit', edit_challenger_path(challenger) %><br/>
+      <%= link_to 'Destroy', challenger, method: :delete,
+                  data: { confirm: 'Are you sure?' }, :remote => true  %>
+      <% end %>
+
+    </td>
+  </tr>
+<% end %>
+</table>

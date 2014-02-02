@@ -1,0 +1,19 @@
+<% if line_item == @current_item %>
+<div id="current_item">
+<% else %>
+<div>
+<% end %>
+
+
+ <span class="font_trebuchet_blk_10">Title: <%= line_item.challenger.title %></span><br>
+    <h5>Recreate this pic: </h5><%= image_tag(line_item.challenger.homage_url) %><br>
+    <span class="font_trebuchet_blk_10">Caption: <%= line_item.challenger.caption %></span><br>
+    <span class="font_trebuchet_blk_10">Colour: <%= line_item.challenger.colour %></span><br>
+    <span class="font_trebuchet_blk_10">Location: <%= line_item.challenger.location %></span><br>
+    <span class="font_trebuchet_blk_10">Theme: <%= line_item.challenger.theme %></span><br>
+    <span class="font_trebuchet_blk_10">Timescale: <%= line_item.challenger.timescale %></span><br><br>
+
+</div>
+
+</div>
+

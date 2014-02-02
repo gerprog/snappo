@@ -1,0 +1,57 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid">
+  
+  <div class="row-fluid" style="margin-left:100px;">
+
+	<p class="font_trebuchet_blk_30">Join Snappo! here</p>
+
+		<%= form_for(@user) do |f| %>
+		<% if @user.errors.any? %>
+		div id="errorExplanation">
+			<h2><%= pluralize(@user.errors.count, "error") %>
+		prohibited this user from being saved:</h2>
+		<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+		</ul>
+	<% end %>
+
+<div class="field">
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+</div>
+<div class="field">
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+</div>
+<div class="actions">
+	<%= f.submit "Sign Me Up!", class: "btn btn-success btn-lg font_century_blk_30", style: "font-size:23pt;padding: 18px 28px;"%>
+</div>
+
+<% end %>
+</div>
+<!--<%= link_to 'Back', challengers_path %>-->
+
+ <div class="row-fluid">
+    <div class="span12" style="margin-top:30px;">
+      <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Take a Challenge  
+    <div class="step1" style="margin-left:70px;"></div>
+    <div class="col-md-12 text-center font_trebuchet_blk_15"> Signup is easy!<br>Login &amp; take a challenge<br>Try some or even all of its tasks</div>
+    <hr class="style-two">
+    </div>
+    <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Upload a Photo!
+    <div class="step2" style="margin-left:70px;"></div>
+    <div class="col-md-12 text-center font_trebuchet_blk_15">When you're ready<br>Login to upload your challenge <br>in your profile</div>
+    <hr class="style-two">
+    </div>
+     <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Vote on others!
+     <div class="step3" style="margin-left:70px;"></div>
+      <div class="col-md-12 text-center font_trebuchet_blk_15">Checkout out the Gallery<br>Vote on other photos<br> &amp; Join the Forum</div>
+      <hr class="style-two">
+   </div>
+</div><!--row--> 
+
+
+</div>
+</div>

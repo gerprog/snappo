@@ -1,0 +1,50 @@
+<div class="container container_grey curved_border emphasize-dark">
+
+
+<div class="row-fluid container_grey curved_border" style="margin-top:-30px;">
+        <div class="span7 text-center">
+    
+    <script type="text/javascript">
+      <%= render 'data' %>
+    </script>     
+
+
+
+<div id="zone"></div>
+
+   <p class="font_trebuchet_blk_25"> Themes</p>
+   <hr class="style-two">
+
+   <p class="font_trebuchet_blk_15" style="margin-top:40px;">
+      <script type="text/javascript">        
+        function theme_challenger ()  {
+        for(var i = 0; i < challenger.length; i++) 
+            document.writeln(challenger[i].theme + "<br>"); 
+        };
+
+        theme_challenger();
+      </script>   
+  <br />
+</p>
+
+  </div>
+
+   <div id="navtwo" class="span5 curved_border dark_grey_box_padding emphasize-dark text-center top-padding-80">
+       <p class="font_trebuchet_blk_25" style="margin-top:-40px;">Glance over <br>what Snappo! <br>can throw at you!</p>
+           <hr class="style-two">
+    <p class="font_trebuchet_blk_20"><a href="titles.html">Titles</a></p>
+     <hr class="style-two">
+  <p class="font_trebuchet_blk_20"><a href="captions.html"> Captions</a></p>
+    <hr class="style-two">
+  <p class="font_trebuchet_blk_20"><a href="locations.html"> Locations</a></p>
+    <hr class="style-two">
+<p class="font_trebuchet_blk_20"><a href="themes.html"> Themes</a></p>
+  <hr class="style-two">
+     <p class="font_trebuchet_blk_25" style="margin-top:50px;">Interested?</p><br><br>
+     <p><%= button_to("Take a Challenge!", challenges_make_one_path, class: "btn btn-inverse btn-lg", style: "font-size:30pt;margin-top:-40px;") %></p><br>
+      </div>
+
+</div><!--row-fluid-->    
+</div><!--container container_yellow-->
+
+

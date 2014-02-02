@@ -1,0 +1,36 @@
+<div class="container container_grey emphasize-dark curved_border">
+<div class="row-fluid">
+
+<div class="text-center">
+  <p class="font_trebuchet_blk_30" style="margin-top:20px;">Thank you for using Snappo!</p>
+<p class="font_trebuchet_blk_30" style="margin-top:40px;">Your Photo has been uploaded</p>
+  <p class="font_trebuchet_blk_30" style="margin-top:20px;">and will soon be in the Gallery</p>
+  <p class="font_trebuchet_blk_30" style="margin-top:50px;">Go on, try another challenge!</p>
+   <hr class="style-two">
+</div>
+
+
+   <div class="row-fluid">
+    <div class="span12" style="margin-top:0px;">
+      <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">View
+      <hr class="style-two"> 
+    <%= link_to image_tag("gallery1.png"), :controller => "lightboxes",  :action => "index" %>
+    <div class="col-md-12 text-center font_trebuchet_blk_15"> See some finished Snappo!<br>challenges in the Gallery!</div>
+    <hr class="style-two">
+    </div>
+    <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Chat!
+      <hr class="style-two">
+    <%= link_to image_tag("forum2.png"), :controller => "forums",  :action => "index" %>
+    <div class="col-md-12 text-center font_trebuchet_blk_15">Have a peek at the <br>Snappo! Forum</div>
+    <hr class="style-two">
+    </div>
+     <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Vote!
+      <hr class="style-two">
+     <%= link_to image_tag("vote1.png"), :controller => "galleries",  :action => "index" %>
+      <div class="col-md-12 text-center font_trebuchet_blk_15">Give a Yay or Nay <br>on the Votes!</div>
+      <hr class="style-two">
+   </div>
+</div><!--row--> 
+
+</div>
+</div>

@@ -1,0 +1,114 @@
+<div class="container container_grey emphasize-dark curved_border">
+
+<div class="row-fluid ">
+    
+
+      <% if current_user and current_user.admin %>
+<div class="text-center" style="margin-left:0px;">
+       <nav class="navbar-header" style="padding-left:0px;float:left;"> 
+             <ul class="nav font_nav_bar" style="padding-top:20px;">
+                
+                  <li><%= link_to 'Orders', orders_path %></li><br>
+                  <li><%= link_to 'Challenges', challengers_path %></li><br>
+                  <li><%= link_to 'Users', users_path %></li>
+                </ul>
+          </nav><!--/navbar-header -->
+      </div><!--col-md-11 col-md-offset-1 text-center-->
+
+
+<div class="text-center">
+      <p class="font_trebuchet_blk_30">Welcome Admin! You in Charge!</p>
+      <b><%= current_user.email %></b>
+      <%=  Time.now %><br/> <br/>
+      <b> There are <%= @orders.to_a.length %> Orders of Snappo! challenges </b>
+      <hr class="style-two">
+</div><!--/row-fluid -->
+
+  <% else %>
+
+  <div class="row-fluid ">
+    <div class="col-md-12 text-center">
+      <span class="font_trebuchet_blk_30">Welcome to your Snappo! profile </span>
+      <span class="font_trebuchet_blue_20" style="margin-top:20px;"><%= current_user.email %></span> &nbsp;
+      <span class=""><%= link_to 'Edit my Details', edit_user_path(current_user), class: "btn btn-warning btn-sm", style: "margin-top:-20px;" %></span>
+      
+        <div><hr class="style-two"></div>
+
+         <div class="row-fluid order_details curved_border">
+          <% if current_user and not current_user.admin %>
+
+                <p class="font_trebuchet_blk_20" style="margin-top:20px;">Your Snappo! challenges will all show here:</p>
+                <br>
+                
+              <% @history.each do |order| %>
+                  <span class="font_trebuchet_blk_15">Name:</span> 
+                  <span class="font_trebuchet_blk_15"><%= order.name %></span> <br/>
+                  <span class="font_trebuchet_blk_15">Date Challenge taken: </span>
+                  <span class="font_trebuchet_blk_15"><%= order.created_at %> </span><br/>
+                  <span class="font_trebuchet_blk_20"><%= link_to 'Upload Photo', order, class: [:btn, :'btn-lg', :'btn-inverse', :'font_century_blk_30'] %></span>  <br/>  <br/>
+              <% end %>
+              <% if current_user and not current_user.admin %>
+                  <p class="font_trebuchet_blk_10"><%= will_paginate @history %></p>
+                  
+              <% end %>
+              
+          <% end %>
+
+         <% end %>
+    </div><!-- col-md-11 text-center-->
+  </div><!-- row-fluid-->
+      
+
+
+  <% if current_user and current_user.admin == false%>
+
+      <div class="row-fluid ">
+        <div class="col-md-12 text-center">
+
+          <% if current_cart.line_items.empty? %>
+          <p class="font_trebuchet_blk_30" style="margin-top:50px;margin-bottom:40px;">Hey Hey Let's Go!</p>
+            <%= button_to("Take a Challenge!", challenges_make_one_path, class: "btn btn-inverse btn-lg font_century_blk_30", style: "font-size:20pt;padding: 16px 28px;") %>
+               <% else %>
+                 <p class="font_trebuchet_blk_30" style="margin-top:60px;margin-bottom:40px;">Taking a Snappo! challenge? </p>
+               <%= link_to("Back to your Cart!", cart_path(current_cart), class: "btn btn-warning btn-lg font_century_blk_30", style: "font-size:20pt;padding: 16px 28px;") %>
+               <% end %>
+        </div> <!-- row-fluid col-md-offset-1 col-md-5 -->
+      </div> <!-- row-fluid -->
+
+     <div class="row-fluid">
+        <div class="span12" style="margin-top:0px;">
+          <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Take a Challenge 
+          <hr class="style-two"> 
+        <div class="step1" style="margin-left:70px;"></div>
+        <div class="col-md-12 text-center font_trebuchet_blk_15"> Signup is easy!<br>Login &amp; take a challenge<br>Try some or even all of its tasks</div>
+        <hr class="style-two">
+        </div>
+        <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Upload a Photo!
+          <hr class="style-two">
+        <div class="step2" style="margin-left:70px;"></div>
+        <div class="col-md-12 text-center font_trebuchet_blk_15">When you're ready<br>Login to your profile <br>to upload your photo</div>
+        <hr class="style-two">
+        </div>
+         <div class="span4 text-center font_trebuchet_blk_20" style="margin-top:20px;">Vote on others!
+          <hr class="style-two">
+         <div class="step3" style="margin-left:70px;"></div>
+          <div class="col-md-12 text-center font_trebuchet_blk_15">Vote on other photos<br> Checkout out the Gallery<br>&amp; Join the Forum</div>
+          <hr class="style-two">
+       </div>
+    </div><!--row--> 
+
+    </div><!--col-md-11 text-center--> 
+  </div><!--row-fluid--> 
+
+<% end %>
+
+
+</div>
+</div>
+
+
+
+
+
+
+

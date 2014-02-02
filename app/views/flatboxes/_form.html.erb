@@ -1,0 +1,17 @@
+<%= form_for(@flatbox) do |f| %>
+  <% if @flatbox.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flatbox.errors.count, "error") %> prohibited this flatbox from being saved:</h2>
+
+      <ul>
+      <% @flatbox.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

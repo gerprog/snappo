@@ -1,0 +1,15 @@
+<div class="container container_grey curved_border emphasize-dark">
+<div class="row-fluid  col-md-offset-1 col-md-11">
+
+ <% if current_user and current_user.admin %>
+	<p class="font_trebuchet_blk_20">Editing Challenger</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @challenger %> |
+<%= link_to 'Back', challengers_path %>
+
+<% end %>
+
+</div>
+</div>

@@ -1,0 +1,58 @@
+<div class="container container_grey curved_border emphasize-dark" style="margin-top:0px;">
+<div class="row-fluid">
+
+<!--<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>-->
+
+	<div class="text-center margin-from-top-minus30">
+	<p class="font_trebuchet_blk_30" style="margin-top:20px;">Your Snappo! challenge is here</p>
+
+	</div>
+	<div class="text-center">
+		<hr class="style-two">
+	</div><!-- row-fluid text-center margin-from-top-minus30-->
+
+<div style="padding-left:80px;margin-top:50px;">
+
+	<div class="span4" style="margin-bottom:30px;">
+	      <% @cart.line_items.to_a.each do |item| %>
+	      	
+	      	<div id="challenges_4" class="cart_small curved_border text-center">
+	 			<span class="font_trebuchet_blk_10">Title: <%= item.challenger.title %></span>
+			    <h5>Homage: </h5><%= image_tag(item.challenger.homage_url) %><br>
+			    <span class="font_trebuchet_blk_10">Caption: <%= item.challenger.caption %></span><br>
+			    <span class="font_trebuchet_blk_10">Colour: <%= item.challenger.colour %></span><br>
+			    <span class="font_trebuchet_blk_10">Location: <%= item.challenger.location %></span><br>
+			    <span class="font_trebuchet_blk_10">Theme: <%= item.challenger.theme %></span><br>
+			    <span class="font_trebuchet_blk_10">Timescale: <%= item.challenger.timescale %></span><br>
+			</div><!-- cart text-center-->
+		<% end %>
+	</div><!--span4-->
+
+	<div class="span6" align="center" style="margin-left:100px;">
+
+		<div align="center" style="margin-top:40px;">
+			<%= button_to "Accept Challenge", new_order_path, class: "btn btn-success btn-lg font_century_blk_30", style: "font-size:30pt;padding: 18px 28px;margin-top:-20px;", method: :get %>
+			<p class="font_trebuchet_blk_20 text-center">If you're happy with this one</p>
+		</div>
+
+		<div class="" align="center" style="margin-top:30px;">
+			<hr class="style-two">
+		</div>
+
+		<div class="" align="center" style="margin-top:50px;">
+		<%= button_to "Remove",  @cart, class: "btn btn-danger btn-lg font_century_blk_30", style: "font-size:20pt;padding: 18px 28px;margin-top:-20px;", method: :delete, confirm: 'Are you sure?' %>
+		<p class="font_trebuchet_blk_20 text-center">If you would like to start again</p>
+		</div>
+
+	</div><!-- span6-->		
+
+</div><!-- row-->	
+
+
+
+</div><!-- row-fluid-->	
+</div><!-- "container container_grey curved_border emphasize-dark"-->
+
+
