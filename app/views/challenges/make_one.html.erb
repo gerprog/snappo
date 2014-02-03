@@ -34,18 +34,18 @@
 
         <% @challengers.each do |challenger| %>
         <div class="span12 curved_border dark_grey_box_padding emphasize-dark" style="padding-left:70px;padding-right:70px;">
-              <div class="span 10 text-center curved_border challenge">
+              <div class="span 10 text-center curved_border challenge" style="padding-top:45px;">
                 <span class="font_trebuchet_blk_20">Title: </span>
-                <span class="font_trebuchet_grey_20"><%= challenger.title %></span><br><br>
-                <span class="font_trebuchet_blk_20">Recreate this pic:</span><br><br><%= image_tag(challenger.homage_url) %><br><br>
+                <span class="font_trebuchet_grey_20"><%= challenger.title %></span><br>
+                <span class="font_trebuchet_blk_20">Recreate this pic:</span><br><br><%= image_tag(challenger.homage_url) %><br>
                   <span class="font_trebuchet_blk_20">Caption: </span><br>
-                    <span class="font_trebuchet_grey_20"><%= sanitize(challenger.caption) %></span><br><br>
+                    <span class="font_trebuchet_grey_20"><%= sanitize(challenger.caption) %></span><br>
                    <span class="font_trebuchet_blk_20">Colour: </span>
-                    <span class="font_trebuchet_grey_20"><%= challenger.colour %></span><br><br>
+                    <span class="font_trebuchet_grey_20"><%= challenger.colour %></span><br>
                    <span class="font_trebuchet_blk_20">Location: </span>
-                    <span class="font_trebuchet_grey_20"><%= challenger.location %></span><br><br>
+                    <span class="font_trebuchet_grey_20"><%= challenger.location %></span><br>
                     <span class="font_trebuchet_blk_20">Theme: </span>
-                     <span class="font_trebuchet_grey_20"> <%= challenger.theme %></span><br><br>
+                     <span class="font_trebuchet_grey_20"> <%= challenger.theme %></span><br>
                     <span class="font_trebuchet_blk_20">Timescale: </span>
                       <span class="font_trebuchet_grey_20"><%= challenger.timescale %></span>
               </div><!--makeone_list col-md-8--> 
